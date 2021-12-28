@@ -1,0 +1,14 @@
+{
+  "rang1": [
+    {
+      "action": "read",
+      "object": "webdata1"
+    }
+  ],
+  "rang2": [
+    {
+      "action": "read",
+      "object": "webdata2"
+    }
+  ]
+}

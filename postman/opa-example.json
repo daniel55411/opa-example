@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "2cf2dcac-0eaa-4c53-a7a4-e86b67cde275",
+		"name": "opa-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "check_permissions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"input\": {\n        \"user\": \"bob\",\n        \"action\": \"read\",\n        \"object\": \"webdata1\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/http/authz",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"http",
+						"authz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download_bundle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8888/bundles/bundle.tar.gz",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"bundles",
+						"bundle.tar.gz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_role",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"op\": \"add\",\n        \"path\": \"-\",\n        \"value\": {\n            \"not_alice\": [\"rang2\"]\n        }\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/external/roles/bindings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"external",
+						"roles",
+						"bindings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_initial_permissions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/initial/roles/permissions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"initial",
+						"roles",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_initial_roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/initial/roles/bindings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"initial",
+						"roles",
+						"bindings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_external_roles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/external/roles/bindings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"external",
+						"roles",
+						"bindings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_external_roles",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8181/v1/data/external/roles/bindings",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8181",
+					"path": [
+						"v1",
+						"data",
+						"external",
+						"roles",
+						"bindings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
